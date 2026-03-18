@@ -7,4 +7,4 @@ Allow: /
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://macascore.com/sitemap-index.xml
+Sitemap: https://macascore.com/sitemap.xml
