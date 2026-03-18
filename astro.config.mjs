@@ -8,9 +8,11 @@ export default defineConfig({
     site: 'https://macascore.com',
     integrations: [
         tailwind(),
-        sitemap(),
+        sitemap({
+            filter: (page) => !page.includes('/api/'),
+        }),
     ],
-    output: 'server',
+    output: 'hybrid',
     adapter: vercel(),
 
     server: {

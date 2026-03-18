@@ -13,6 +13,8 @@
  *   CC_EMAIL         → (Opcional) Email en copia en la notificación al propietario
  */
 
+export const prerender = false;
+
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
