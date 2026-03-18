@@ -1,0 +1,10 @@
+# robots.txt — Macas Core Build S.L.
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://macascore.com/sitemap-index.xml

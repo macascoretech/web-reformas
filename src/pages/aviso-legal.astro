@@ -1,0 +1,176 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+// import CookieBanner from "@/components/CookieBanner.astro";
+import { SITE } from "@/config/site";
+---
+
+<Layout
+  title="Aviso Legal"
+  description={`Aviso legal de ${SITE.name}. Información sobre el titular del sitio web, condiciones de uso y propiedad intelectual.`}
+  noindex={false}
+>
+  <Navbar solidBg />
+  <main id="main-content" class="pt-28 pb-20 bg-light min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-10">
+        <span
+          class="inline-block bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-3"
+        >
+          Legal
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-black text-primary">
+          Aviso Legal
+        </h1>
+        <p class="text-secondary mt-3 text-sm">
+          Última actualización: {
+            new Date().toLocaleDateString("es-ES", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </p>
+      </header>
+
+      <div
+        class="prose prose-slate max-w-none bg-white rounded-2xl p-8 shadow-sm space-y-8 text-secondary leading-relaxed"
+      >
+        <section aria-labelledby="aviso-1">
+          <h2 id="aviso-1" class="text-xl font-bold text-primary">
+            1. Datos identificativos del titular
+          </h2>
+          <p>
+            En cumplimiento con el artículo 10 de la Ley 34/2002, de 11 de
+            julio, de Servicios de la Sociedad de la Información y del Comercio
+            Electrónico (LSSICE), se informa que el presente sitio web es
+            titularidad de:
+          </p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Denominación social:</strong> {SITE.name}</li>
+            <li><strong>CIF:</strong> {SITE.cif}</li>
+            <li><strong>Domicilio social:</strong> {SITE.address}</li>
+            <li><strong>Teléfono:</strong> {SITE.phoneDisplay}</li>
+            <li><strong>Correo electrónico:</strong> {SITE.email}</li>
+            <li><strong>Sitio web:</strong> {SITE.url}</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="aviso-2">
+          <h2 id="aviso-2" class="text-xl font-bold text-primary">2. Objeto</h2>
+          <p>
+            El presente aviso legal regula el uso y utilización del sitio web <strong
+              >{SITE.url}</strong
+            >, del que es titular {SITE.name}. La navegación por el sitio web
+            atribuye la condición de usuario del mismo e implica la aceptación
+            plena y sin reservas de todas y cada una de las disposiciones
+            incluidas en este Aviso Legal.
+          </p>
+        </section>
+
+        <section aria-labelledby="aviso-3">
+          <h2 id="aviso-3" class="text-xl font-bold text-primary">
+            3. Condiciones de acceso y uso
+          </h2>
+          <p>
+            El acceso al sitio web es gratuito. El usuario se compromete a hacer
+            un uso adecuado de los contenidos y servicios ofrecidos a través del
+            mismo y, con carácter enunciativo pero no limitativo, a no
+            emplearlos para incurrir en actividades ilícitas o contrarias a la
+            buena fe y al orden público.
+          </p>
+          <p>
+            {SITE.name} se reserva el derecho de retirar todos aquellos comentarios
+            y aportaciones que vulneren el respeto a la dignidad de la persona, que
+            sean discriminatorios, xenófobos, racistas, pornográficos, o que atenten
+            contra la juventud o la infancia.
+          </p>
+        </section>
+
+        <section aria-labelledby="aviso-4">
+          <h2 id="aviso-4" class="text-xl font-bold text-primary">
+            4. Propiedad intelectual e industrial
+          </h2>
+          <p>
+            {SITE.name} por sí o como cesionaria, es titular de todos los derechos
+            de propiedad intelectual e industrial de su página web, así como de los
+            elementos contenidos en la misma (a título enunciativo imágenes, sonido,
+            audio, vídeo, software o textos). Todos los derechos reservados.
+          </p>
+          <p>
+            Quedan expresamente prohibidas la reproducción, distribución y
+            comunicación pública, incluida su modalidad de puesta a disposición,
+            de la totalidad o parte de los contenidos de esta página web, con
+            fines comerciales, en cualquier soporte y por cualquier medio
+            técnico, sin la autorización de {SITE.name}.
+          </p>
+        </section>
+
+        <section aria-labelledby="aviso-5">
+          <h2 id="aviso-5" class="text-xl font-bold text-primary">
+            5. Exclusión de garantías y responsabilidad
+          </h2>
+          <p>
+            {SITE.name} no se hace responsable, en ningún caso, de los daños y perjuicios
+            de cualquier naturaleza que pudieran ocasionar, a título enunciativo:
+            errores u omisiones en los contenidos, falta de disponibilidad del portal
+            o la transmisión de virus o programas maliciosos en los contenidos, a
+            pesar de haber adoptado todas las medidas tecnológicas necesarias para
+            evitarlo.
+          </p>
+        </section>
+
+        <section aria-labelledby="aviso-6">
+          <h2 id="aviso-6" class="text-xl font-bold text-primary">
+            6. Modificaciones
+          </h2>
+          <p>
+            {SITE.name} se reserva el derecho de efectuar sin previo aviso las modificaciones
+            que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir
+            tanto los contenidos y servicios que se prestan a través de la misma como
+            la forma en la que éstos aparezcan presentados o localizados en su portal.
+          </p>
+        </section>
+
+        <section aria-labelledby="aviso-7">
+          <h2 id="aviso-7" class="text-xl font-bold text-primary">
+            7. Legislación aplicable y jurisdicción
+          </h2>
+          <p>
+            La relación entre {SITE.name} y el Usuario se regirá por la normativa
+            española vigente y cualquier controversia se someterá a los Juzgados y
+            tribunales de la ciudad de Murcia, salvo que la Ley aplicable establezca
+            lo contrario.
+          </p>
+        </section>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-accent hover:text-amber-600 font-medium text-sm transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  {/* <CookieBanner /> */}
+</Layout>

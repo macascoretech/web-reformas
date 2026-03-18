@@ -1,0 +1,297 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+// import CookieBanner from '@/components/CookieBanner.astro';
+import { SITE } from "@/config/site";
+---
+
+<Layout
+  title="Política de Cookies"
+  description={`Política de cookies de ${SITE.name}. Información sobre qué cookies utilizamos y cómo puedes gestionarlas.`}
+>
+  <Navbar solidBg />
+  <main id="main-content" class="pt-28 pb-20 bg-light min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-10">
+        <span
+          class="inline-block bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-3"
+        >
+          Legal
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-black text-primary">
+          Política de Cookies
+        </h1>
+        <p class="text-secondary mt-3 text-sm">
+          Última actualización: {
+            new Date().toLocaleDateString("es-ES", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </p>
+      </header>
+
+      <div
+        class="bg-white rounded-2xl p-8 shadow-sm space-y-8 text-secondary leading-relaxed text-sm"
+      >
+        <section aria-labelledby="ck-que-son">
+          <h2 id="ck-que-son" class="text-xl font-bold text-primary mb-3">
+            1. ¿Qué son las cookies?
+          </h2>
+          <p>
+            Las cookies son pequeños archivos de texto que los sitios web
+            almacenan en su dispositivo al visitarlos. Se utilizan ampliamente
+            para hacer que los sitios web funcionen de manera eficiente, así
+            como para proporcionar información a los propietarios del sitio.
+          </p>
+        </section>
+
+        <section aria-labelledby="ck-tipos">
+          <h2 id="ck-tipos" class="text-xl font-bold text-primary mb-3">
+            2. Tipos de cookies que utilizamos
+          </h2>
+
+          <!-- Tabla de cookies -->
+          <div class="overflow-x-auto -mx-2 sm:mx-0">
+            <table
+              class="min-w-full border border-gray-100 rounded-xl overflow-hidden text-xs mt-4"
+            >
+              <thead>
+                <tr class="bg-primary text-white">
+                  <th scope="col" class="px-4 py-3 text-left font-semibold"
+                    >Nombre</th
+                  >
+                  <th scope="col" class="px-4 py-3 text-left font-semibold"
+                    >Tipo</th
+                  >
+                  <th scope="col" class="px-4 py-3 text-left font-semibold"
+                    >Duración</th
+                  >
+                  <th scope="col" class="px-4 py-3 text-left font-semibold"
+                    >Finalidad</th
+                  >
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <tr class="hover:bg-light">
+                  <td class="px-4 py-3 font-medium text-primary"
+                    >cookie_consent</td
+                  >
+                  <td class="px-4 py-3">Técnica / Necesaria</td>
+                  <td class="px-4 py-3">1 año</td>
+                  <td class="px-4 py-3"
+                    >Almacena las preferencias de consentimiento de cookies del
+                    usuario.</td
+                  >
+                </tr>
+                <!-- Filas comentadas: descomentar cuando se añadan cookies analíticas/marketing
+                <tr class="hover:bg-light">
+                  <td class="px-4 py-3 font-medium text-primary">_ga</td>
+                  <td class="px-4 py-3">Analítica (Google Analytics)</td>
+                  <td class="px-4 py-3">2 años</td>
+                  <td class="px-4 py-3">Distingue a los usuarios únicos. Solo se activa con consentimiento.</td>
+                </tr>
+                <tr class="hover:bg-light">
+                  <td class="px-4 py-3 font-medium text-primary">_gid</td>
+                  <td class="px-4 py-3">Analítica (Google Analytics)</td>
+                  <td class="px-4 py-3">24 horas</td>
+                  <td class="px-4 py-3">Distingue a los usuarios. Solo se activa con consentimiento.</td>
+                </tr>
+                -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="ck-necesarias">
+          <h2 id="ck-necesarias" class="text-xl font-bold text-primary mb-3">
+            3. Cookies estrictamente necesarias
+          </h2>
+          <p>
+            Esta es la única cookie que utilizamos actualmente. Es esencial para
+            recordar tu preferencia sobre el aviso de cookies y no requiere
+            consentimiento previo al ser de carácter técnico. Se activa la
+            primera vez que visitas el sitio y se renueva anualmente.
+          </p>
+        </section>
+
+        <!-- Sección comentada: descomentar cuando se implementen cookies analíticas
+        <section aria-labelledby="ck-analiticas">
+          <h2 id="ck-analiticas" class="text-xl font-bold text-primary mb-3">4. Cookies analíticas</h2>
+          <p>
+            Permiten contabilizar el número de visitantes y analizar cómo estos navegan por el sitio.
+            La información que recopilan es anónima. Solo se activan si el usuario acepta las cookies analíticas.
+          </p>
+        </section>
+        -->
+
+        <!-- Sección comentada: descomentar cuando se utilicen servicios de terceros
+        <section aria-labelledby="ck-terceros">
+          <h2 id="ck-terceros" class="text-xl font-bold text-primary mb-3">5. Cookies de terceros</h2>
+          <p>
+            Determinadas funcionalidades del sitio pueden estar gestionadas por terceros proveedores
+            (por ejemplo, Google Analytics). Dichos terceros pueden instalar sus propias cookies en su
+            dispositivo. {SITE.name} no tiene control sobre estas cookies. Consulte la política de
+            privacidad de cada proveedor para más información.
+          </p>
+        </section>
+        -->
+
+        <section aria-labelledby="ck-terceros">
+          <h2 id="ck-terceros" class="text-xl font-bold text-primary mb-3">
+            5. Cookies de terceros
+          </h2>
+          <p>
+            Actualmente este sitio web <strong class="text-primary"
+              >no utiliza cookies de terceros</strong
+            >. No hay integraciones con Google Analytics, redes sociales ni
+            plataformas publicitarias. En caso de incorporarlas en el futuro,
+            esta política se actualizará y se solicitará el consentimiento
+            correspondiente.
+          </p>
+        </section>
+
+        <section aria-labelledby="ck-gestion">
+          <h2 id="ck-gestion" class="text-xl font-bold text-primary mb-3">
+            6. Cómo gestionar las cookies
+          </h2>
+
+          <p class="mb-3">
+            Puede aceptar o rechazar las cookies no necesarias en cualquier
+            momento a través de nuestro panel de preferencias. También puede
+            gestionar o eliminar cookies desde su navegador:
+          </p>
+
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="https://support.google.com/chrome/answer/95647"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent hover:underline"
+              >
+                Google Chrome
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent hover:underline"
+              >
+                Mozilla Firefox
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://support.apple.com/es-es/guide/safari/sfri11471/mac"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent hover:underline"
+              >
+                Safari
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent hover:underline"
+              >
+                Microsoft Edge
+              </a>
+            </li>
+          </ul>
+
+          <p class="mt-3">
+            Tenga en cuenta que bloquear todas las cookies puede afectar
+            negativamente a la funcionalidad del sitio y limitar su experiencia
+            de usuario.
+          </p>
+
+          <!-- Botón comentado: descomentar cuando el banner de cookies esté activo
+          <button
+            id="open-cookie-settings"
+            type="button"
+            class="mt-5 inline-flex items-center gap-2 bg-accent hover:bg-amber-600 text-white font-medium px-5 py-2.5 rounded-xl text-xs transition-colors"
+          >
+            Gestionar mis preferencias de cookies
+          </button>
+          -->
+        </section>
+
+        <section aria-labelledby="ck-actualizaciones">
+          <h2
+            id="ck-actualizaciones"
+            class="text-xl font-bold text-primary mb-3"
+          >
+            7. Actualizaciones
+          </h2>
+          <p>
+            {SITE.name} puede actualizar esta política de cookies. Le recomendamos
+            que la revise periódicamente. La fecha de la última actualización aparece
+            al inicio de este documento.
+          </p>
+        </section>
+
+        <section aria-labelledby="ck-contacto">
+          <h2 id="ck-contacto" class="text-xl font-bold text-primary mb-3">
+            8. Contacto
+          </h2>
+          <p>
+            Si tiene alguna pregunta sobre el uso de cookies en este sitio web,
+            puede contactarnos en:
+            <a href={`mailto:${SITE.email}`} class="text-accent hover:underline"
+              >{SITE.email}</a
+            >
+          </p>
+        </section>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-accent hover:text-amber-600 font-medium text-sm transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  {/* <CookieBanner /> */}
+</Layout>
+
+<!-- Script comentado: descomentar junto con el banner de cookies
+<script>
+  // Botón que reabre el panel de cookies
+  document.getElementById('open-cookie-settings')?.addEventListener('click', () => {
+    localStorage.removeItem('cookie_consent');
+    const banner = document.getElementById('cookie-banner');
+    banner?.classList.remove('hidden');
+    banner?.classList.add('flex');
+    const panel = document.getElementById('cookie-settings-panel');
+    panel?.classList.remove('hidden');
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  });
+</script>
+-->

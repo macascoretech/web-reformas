@@ -1,0 +1,211 @@
+---
+import { Image } from "astro:assets";
+import about from "../assets/about-team.webp";
+
+const values = [
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />`,
+    title: "Empresa familiar",
+    description:
+      "Trato cercano y personalizado. Conocemos a nuestros clientes y nos preocupamos por cada proyecto como si fuera el nuestro.",
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />`,
+    title: "Calidad garantizada",
+    description:
+      "Materiales de primera y acabados impecables. No terminamos hasta que el resultado supere tus expectativas.",
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />`,
+    title: "Transparencia total",
+    description:
+      "Presupuestos claros y detallados, sin sorpresas. Informamos de cada paso del proceso para que siempre sepas en qué punto estamos.",
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />`,
+    title: "Profesionalidad",
+    description:
+      "Personal cualificado con experiencia en cada especialidad. Cumplimos plazos y respetamos tu hogar durante toda la obra.",
+  },
+];
+---
+
+<section
+  id="nosotros"
+  class="py-24 bg-white overflow-hidden"
+  aria-labelledby="about-title"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Cabecera -->
+    <div class="text-center mb-16 reveal">
+      <span
+        class="inline-block bg-accent/10 text-accent text-sm font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+      >
+        Sobre nosotros
+      </span>
+      <h2
+        id="about-title"
+        class="text-3xl sm:text-4xl lg:text-5xl font-black text-primary mb-5"
+      >
+        Una empresa familiar con<br class="hidden sm:block" />
+        <span class="text-accent">vocación de servicio</span>
+      </h2>
+      <p class="text-secondary text-lg max-w-2xl mx-auto leading-relaxed">
+        Desde Molina de Segura atendemos toda la provincia de Murcia con la
+        cercanía de un negocio familiar y la profesionalidad de un equipo
+        altamente cualificado.
+      </p>
+    </div>
+
+    <!-- Contenido principal: imagen + texto -->
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+      <!-- Imagen -->
+      <div class="relative reveal-left">
+        <div
+          class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]"
+        >
+          <Image
+            src={about}
+            alt=""
+            class="w-full h-full object-cover"
+            width={640}
+            height={480}
+            format={"webp"}
+            quality={80}
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent"
+          >
+          </div>
+        </div>
+        <!-- Badge flotante -->
+        <div
+          class="absolute -bottom-6 -right-6 hidden sm:flex items-center gap-3 bg-white rounded-2xl p-5 shadow-xl border border-light"
+          aria-hidden="true"
+        >
+          <div
+            class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-accent"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              ></path>
+            </svg>
+          </div>
+          <div>
+            <p class="font-black text-primary text-xl leading-none">100%</p>
+            <p class="text-secondary text-sm mt-0.5">Compromiso familiar</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto -->
+      <div class="reveal-right space-y-6">
+        <h3 class="text-2xl sm:text-3xl font-bold text-primary leading-snug">
+          Tu hogar es nuestro proyecto más importante
+        </h3>
+
+        <p class="text-secondary leading-relaxed">
+          Bienvenidos a <strong class="text-primary"
+            >Macas Core Build S.L.</strong
+          >, una empresa familiar nacida en Murcia con una misión clara: ofrecer
+          reformas de calidad con el trato cercano que mereces. Nos enorgullece
+          contar con un equipo de <strong class="text-primary"
+            >profesionales altamente capacitados</strong
+          >, comprometidos en ofrecer un servicio excepcional y atender cada
+          detalle de tu proyecto.
+        </p>
+
+        <p class="text-secondary leading-relaxed">
+          Sabemos que tu hogar es tu santuario. Por eso nos implicamos desde el
+          primer contacto hasta la entrega final, garantizando que cada trabajo
+          se realice con el más alto estándar de calidad. Trabajamos con <strong
+            class="text-primary">transparencia total</strong
+          >: recibes un presupuesto detallado sin letra pequeña y te mantenemos
+          informado en cada fase de la obra.
+        </p>
+
+        <p class="text-secondary leading-relaxed">
+          Cubrimos toda la <strong class="text-primary"
+            >provincia de Murcia</strong
+          > con especial atención a particulares que buscan transformar su vivienda
+          o añadir el lujo de una piscina a medida.
+        </p>
+
+        <!-- Highlights -->
+        <ul class="space-y-3 pt-2" aria-label="Puntos diferenciales">
+          {
+            [
+              "Presupuesto gratuito y sin compromiso",
+              "Equipo propio en todas las especialidades",
+              "Plazo de ejecución cumplido y comunicación constante",
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-accent flex-shrink-0 mt-0.5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-secondary">{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Valores -->
+    <div
+      class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+      role="list"
+      aria-label="Valores de la empresa"
+    >
+      {
+        values.map((value, i) => (
+          <article
+            class="reveal bg-light rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-accent/20"
+            style={`animation-delay: ${i * 0.1}s`}
+            role="listitem"
+          >
+            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-accent"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+                aria-hidden="true"
+              >
+                <Fragment set:html={value.icon} />
+              </svg>
+            </div>
+            <h3 class="font-bold text-primary text-base mb-2">{value.title}</h3>
+            <p class="text-secondary text-sm leading-relaxed">
+              {value.description}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

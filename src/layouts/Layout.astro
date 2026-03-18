@@ -1,0 +1,146 @@
+---
+/**
+ * Layout principal del sitio.
+ * Incluye meta SEO, fuentes, estilos globales y scripts de accesibilidad.
+ *
+ * SEO tip: Revisa que cada página que use este layout pase
+ * title y description únicos para maximizar el posicionamiento.
+ */
+import { SITE } from "@/config/site";
+import "@/styles/global.css";
+
+interface Props {
+    title?: string;
+    description?: string;
+    ogImage?: string;
+    noindex?: boolean;
+}
+
+const {
+    title = SITE.name,
+    description = SITE.description,
+    ogImage = SITE.ogImage,
+    noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, SITE.url);
+const fullTitle = title === SITE.name ? title : `${title} | ${SITE.name}`;
+---
+
+<!doctype html>
+<html lang={SITE.lang} class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- ── Primary SEO ── -->
+        <title>{fullTitle}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalURL} />
+        {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+        <!-- ── Open Graph ── -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={new URL(ogImage, SITE.url)} />
+        <meta property="og:locale" content={SITE.locale} />
+        <meta property="og:site_name" content={SITE.name} />
+
+        <!-- ── Twitter Card ── -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={fullTitle} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={new URL(ogImage, SITE.url)} />
+
+        <!-- ── Favicon ── -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+        <!-- ── Fuentes Google (Roboto) ── -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- ── Schema.org LocalBusiness ── -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "HomeAndConstructionBusiness",
+                "name": "Macas Core Build S.L.",
+                "description": "Empresa familiar especializada en reformas integrales, construcción de piscinas y obras en Murcia.",
+                "url": "https://macascore.com",
+                "telephone": "+34613082506",
+                "email": "andrea@macascore.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "",
+                    "addressLocality": "Molina de Segura",
+                    "addressRegion": "Murcia",
+                    "postalCode": "30500",
+                    "addressCountry": "ES"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 38.05916,
+                    "longitude": -1.2204078
+                },
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday"
+                        ],
+                        "opens": "08:00",
+                        "closes": "20:00"
+                    }
+                ],
+                "areaServed": "Murcia, España",
+                "priceRange": "€€€",
+                "foundingDate": "2026",
+                "image": "https://macascore.com/images/og-image.jpg" // TODO: Cambiar por imagen real del negocio
+            }
+        </script>
+
+        <meta name="generator" content={Astro.generator} />
+    </head>
+
+    <body class="antialiased font-sans text-primary bg-white">
+        <a
+            href="#main-content"
+            class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 bg-accent text-white px-4 py-2 rounded font-medium"
+        >
+            Saltar al contenido principal
+        </a>
+
+        <slot />
+
+        <!-- ── Script de animaciones scroll ── -->
+        <script>
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                },
+                { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+            );
+
+            document
+                .querySelectorAll(".reveal, .reveal-left, .reveal-right")
+                .forEach((el) => {
+                    observer.observe(el);
+                });
+        </script>
+    </body>
+</html>

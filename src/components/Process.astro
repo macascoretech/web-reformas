@@ -1,0 +1,134 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Contacto inicial',
+    description:
+      'Nos llamas, escribes o rellenas el formulario. Nos ponemos en contacto contigo en menos de 24 horas para escuchar tu proyecto sin ningún compromiso.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />`,
+  },
+  {
+    number: '02',
+    title: 'Evaluación in situ',
+    description:
+      'Visitamos tu vivienda, analizamos el alcance del proyecto y tomamos todas las medidas necesarias para darte una solución personalizada y realista.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />`,
+  },
+  {
+    number: '03',
+    title: 'Presupuesto detallado',
+    description:
+      'Recibes un presupuesto claro, desglosado y sin sorpresas. Puedes consultarnos cualquier duda antes de aceptar. Solo empezamos cuando tú confirmas.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />`,
+  },
+  {
+    number: '04',
+    title: 'Ejecución y entrega',
+    description:
+      'Llevamos a cabo la obra con nuestro equipo propio, respetando plazos y tu hogar. Te informamos periódicamente y al finalizar realizamos una revisión contigo.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />`,
+  },
+];
+---
+
+<section
+  id="proceso"
+  class="py-24 bg-primary overflow-hidden relative"
+  aria-labelledby="process-title"
+>
+  <!-- Decoración de fondo -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Cabecera -->
+    <div class="text-center mb-16 reveal">
+      <span class="inline-block bg-accent/20 text-amber-300 text-sm font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+        Cómo trabajamos
+      </span>
+      <h2
+        id="process-title"
+        class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5"
+      >
+        Un proceso <span class="text-accent">simple y transparente</span>
+      </h2>
+      <p class="text-white/65 text-lg max-w-2xl mx-auto leading-relaxed">
+        Desde la primera llamada hasta la entrega de tu proyecto terminado, nos comprometemos a
+        que cada paso sea claro, cómodo y sin complicaciones.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+      <!-- Línea conectora (solo desktop) -->
+      <div
+        class="absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent/20 via-accent/60 to-accent/20 hidden lg:block"
+        aria-hidden="true"
+      ></div>
+
+      {
+        steps.map((step, i) => (
+          <div
+            class="reveal relative flex flex-col items-center text-center group"
+            style={`animation-delay: ${i * 0.15}s`}
+          >
+            <!-- Círculo numerado -->
+            <div
+              class="relative w-20 h-20 bg-accent rounded-full flex items-center justify-center mb-6 shadow-lg shadow-accent/30 z-10 group-hover:scale-110 transition-transform duration-300"
+              aria-hidden="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <Fragment set:html={step.icon} />
+              </svg>
+              <!-- Número -->
+              <span class="absolute -top-2 -right-2 w-7 h-7 bg-primary border-2 border-accent/40 rounded-full text-amber-300 text-xs font-black flex items-center justify-center">
+                {i + 1}
+              </span>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 flex-1 w-full hover:bg-white/10 transition-colors duration-300">
+              <span class="text-accent/50 text-5xl font-black leading-none block mb-2" aria-hidden="true">
+                {step.number}
+              </span>
+              <h3 class="text-white font-bold text-lg mb-3">{step.title}</h3>
+              <p class="text-white/65 text-sm leading-relaxed">{step.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-14 reveal">
+      <p class="text-white/65 mb-6 text-base">
+        ¿Listo para empezar? El presupuesto es completamente <strong class="text-white">gratuito y sin compromiso</strong>.
+      </p>
+      <a
+        href="#contacto"
+        class="inline-flex items-center gap-2 bg-accent hover:bg-amber-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-accent/30 hover:shadow-accent/50 hover:-translate-y-1 text-base"
+      >
+        Solicitar presupuesto gratis
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,233 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+// import CookieBanner from "@/components/CookieBanner.astro";
+import { SITE } from "@/config/site";
+---
+
+<Layout
+  title="Política de Privacidad"
+  description={`Política de privacidad de ${SITE.name}. Cómo recopilamos, usamos y protegemos tus datos personales conforme al RGPD.`}
+>
+  <Navbar solidBg />
+
+  <main id="main-content" class="pt-28 pb-20 bg-light min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-10">
+        <span
+          class="inline-block bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-3"
+        >
+          Legal
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-black text-primary">
+          Política de Privacidad
+        </h1>
+        <p class="text-secondary mt-3 text-sm">
+          Última actualización: {
+            new Date().toLocaleDateString("es-ES", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </p>
+      </header>
+
+      <div
+        class="bg-white rounded-2xl p-8 shadow-sm space-y-8 text-secondary leading-relaxed text-sm"
+      >
+        <section aria-labelledby="pp-responsable">
+          <h2 id="pp-responsable" class="text-xl font-bold text-primary mb-3">
+            1. Responsable del tratamiento
+          </h2>
+          <ul class="space-y-1">
+            <li>
+              <strong class="text-primary">Responsable:</strong>
+              {SITE.name}
+            </li>
+            <li><strong class="text-primary">CIF:</strong> {SITE.cif}</li>
+            <li>
+              <strong class="text-primary">Domicilio:</strong>
+              {SITE.address}
+            </li>
+            <li>
+              <strong class="text-primary">Contacto:</strong>
+              {SITE.email}
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="pp-datos">
+          <h2 id="pp-datos" class="text-xl font-bold text-primary mb-3">
+            2. Datos que recopilamos
+          </h2>
+          <p>
+            A través del formulario de contacto recopilamos los siguientes datos
+            personales:
+          </p>
+          <ul class="list-disc pl-5 space-y-1 mt-2">
+            <li>Nombre y apellidos</li>
+            <li>Dirección de correo electrónico</li>
+            <li>Número de teléfono</li>
+            <li>El contenido del mensaje que envías</li>
+          </ul>
+          <p class="mt-3">
+            No recopilamos datos especialmente sensibles ni información bancaria
+            a través de este formulario.
+          </p>
+        </section>
+
+        <section aria-labelledby="pp-finalidad">
+          <h2 id="pp-finalidad" class="text-xl font-bold text-primary mb-3">
+            3. Finalidad del tratamiento
+          </h2>
+          <p>Sus datos serán utilizados exclusivamente para:</p>
+          <ul class="list-disc pl-5 space-y-1 mt-2">
+            <li>
+              Gestionar y responder a las consultas enviadas a través del
+              formulario de contacto.
+            </li>
+            <li>
+              Enviarle información relacionada con los servicios solicitados.
+            </li>
+            <li>
+              Elaborar presupuestos personalizados cuando así lo solicite.
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="pp-legitimacion">
+          <h2 id="pp-legitimacion" class="text-xl font-bold text-primary mb-3">
+            4. Legitimación
+          </h2>
+          <p>
+            La base legal para el tratamiento de sus datos es el <strong
+              class="text-primary">consentimiento expreso</strong
+            >
+            que usted otorga al enviar el formulario de contacto, de conformidad con
+            el artículo 6.1.a) del Reglamento (UE) 2016/679 (RGPD).
+          </p>
+        </section>
+
+        <section aria-labelledby="pp-conservacion">
+          <h2 id="pp-conservacion" class="text-xl font-bold text-primary mb-3">
+            5. Plazo de conservación
+          </h2>
+          <p>
+            Los datos personales proporcionados se conservarán durante el tiempo
+            estrictamente necesario para la gestión de su solicitud y, en
+            cualquier caso, durante el plazo previsto por la legislación
+            vigente. Una vez cumplida la finalidad, los datos serán suprimidos
+            de forma segura.
+          </p>
+        </section>
+
+        <section aria-labelledby="pp-destinatarios">
+          <h2 id="pp-destinatarios" class="text-xl font-bold text-primary mb-3">
+            6. Destinatarios
+          </h2>
+          <p>
+            Sus datos no serán cedidos a terceros, salvo obligación legal.
+            Únicamente podrán acceder a ellos los responsables del tratamiento
+            necesarios para gestionar su consulta.
+          </p>
+          <p class="mt-2">
+            Para el envío de correos electrónicos se utiliza el servicio <strong
+              class="text-primary">Resend</strong
+            >
+            (Resend Inc.), que actúa como encargado del tratamiento y que cumple con
+            las garantías adecuadas conforme al RGPD.
+          </p>
+        </section>
+
+        <section aria-labelledby="pp-derechos">
+          <h2 id="pp-derechos" class="text-xl font-bold text-primary mb-3">
+            7. Sus derechos
+          </h2>
+          <p>Usted tiene derecho a:</p>
+          <ul class="list-disc pl-5 space-y-1 mt-2">
+            <li><strong>Acceder</strong> a sus datos personales.</li>
+            <li><strong>Rectificar</strong> los datos inexactos.</li>
+            <li><strong>Suprimir</strong> sus datos ("derecho al olvido").</li>
+            <li><strong>Limitar</strong> el tratamiento.</li>
+            <li><strong>Portabilidad</strong> de los datos.</li>
+            <li><strong>Oponerse</strong> al tratamiento.</li>
+            <li>
+              <strong>Retirar el consentimiento</strong> en cualquier momento, sin
+              que ello afecte a la licitud del tratamiento previo.
+            </li>
+          </ul>
+          <p class="mt-3">
+            Para ejercer cualquiera de estos derechos, envíe una solicitud a:
+            <a href={`mailto:${SITE.email}`} class="text-accent hover:underline"
+              >{SITE.email}</a
+            >
+            indicando el derecho que desea ejercer. También puede presentar una reclamación
+            ante la
+            <a
+              href="https://www.aepd.es"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-accent hover:underline"
+            >
+              Agencia Española de Protección de Datos (AEPD)
+            </a>.
+          </p>
+        </section>
+
+        <section aria-labelledby="pp-seguridad">
+          <h2 id="pp-seguridad" class="text-xl font-bold text-primary mb-3">
+            8. Seguridad
+          </h2>
+          <p>
+            {SITE.name} tiene implantadas las medidas técnicas y organizativas necesarias
+            para garantizar la seguridad de sus datos de carácter personal y evitar
+            su alteración, pérdida, tratamiento o acceso no autorizado.
+          </p>
+        </section>
+
+        <section aria-labelledby="pp-modificaciones">
+          <h2
+            id="pp-modificaciones"
+            class="text-xl font-bold text-primary mb-3"
+          >
+            9. Modificaciones
+          </h2>
+          <p>
+            Nos reservamos el derecho de actualizar esta política de privacidad
+            para adaptarla a novedades legislativas o cambios internos. Se
+            notificará cualquier modificación relevante a través del propio
+            sitio web.
+          </p>
+        </section>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-accent hover:text-amber-600 font-medium text-sm transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  {/* <CookieBanner /> */}
+</Layout>

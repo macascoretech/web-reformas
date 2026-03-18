@@ -1,0 +1,232 @@
+---
+import { SITE } from "@/config/site";
+
+interface Props {
+  solidBg?: boolean;
+}
+const { solidBg = false } = Astro.props;
+
+const navLinks = [
+  { label: "Inicio", href: "#inicio" },
+  { label: "Nosotros", href: "#nosotros" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Proceso", href: "#proceso" },
+  { label: "Proyectos", href: "#proyectos" },
+  { label: "Contacto", href: "#contacto" },
+];
+---
+
+<header
+  id="navbar"
+  data-solid-bg={solidBg ? "true" : "false"}
+  class={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${solidBg ? "bg-primary shadow-lg" : "bg-transparent"}`}
+  role="banner"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav
+      class="flex items-center justify-between h-20"
+      aria-label="Navegación principal"
+    >
+      <!-- Logo -->
+      <a
+        href="/#inicio"
+        class="flex items-center gap-3 group"
+        aria-label={`${SITE.name} - Ir al inicio`}
+      >
+        <div
+          class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform duration-200"
+          aria-hidden="true"
+        >
+          <!-- Icono casa/construcción -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6 text-white"
+            aria-hidden="true"
+          >
+            <path
+              d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"
+            ></path>
+            <path
+              d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
+            ></path>
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <span
+            id="logo-text"
+            class="block font-bold text-base sm:text-lg tracking-tight transition-colors duration-300 text-white"
+          >
+            Macas Core Build
+          </span>
+          <span
+            id="logo-subtitle"
+            class="block text-xs font-light transition-colors duration-300 text-white/70"
+          >
+            Reformas &amp; Piscinas · Murcia
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden lg:flex items-center gap-1" role="list">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 text-white/90 hover:text-accent hover:bg-white/10"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- CTA desktop -->
+      <a
+        href="#contacto"
+        class="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 text-sm shadow hover:shadow-lg hover:-translate-y-0.5"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+          ></path>
+        </svg>
+        Pedir presupuesto
+      </a>
+
+      <!-- Hamburger mobile -->
+      <button
+        id="menu-toggle"
+        type="button"
+        class="lg:hidden p-2 rounded-md text-white hover:bg-white/10 transition-colors"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menú de navegación"
+      >
+        <svg
+          id="menu-icon-open"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          id="menu-icon-close"
+          class="h-6 w-6 hidden"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden"
+    role="navigation"
+    aria-label="Menú móvil"
+  >
+    <div
+      class="bg-primary/95 backdrop-blur-md border-t border-white/10 px-4 py-4 space-y-1"
+    >
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="mobile-nav-link block px-4 py-3 rounded-lg text-white/90 hover:text-accent hover:bg-white/10 font-medium transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <div class="pt-2 border-t border-white/10">
+        <a
+          href="#contacto"
+          class="mobile-nav-link block w-full text-center bg-accent hover:bg-amber-600 text-white font-semibold py-3 rounded-lg mt-2 transition-colors"
+        >
+          Pedir presupuesto
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const navbar = document.getElementById("navbar");
+  const logoText = document.getElementById("logo-text");
+  const logoSubtitle = document.getElementById("logo-subtitle");
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const openIcon = document.getElementById("menu-icon-open");
+  const closeIcon = document.getElementById("menu-icon-close");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const isSolidBg = (navbar as HTMLElement)?.dataset.solidBg === "true";
+
+  // ── Cambiar estilo navbar al hacer scroll ──
+  function onScroll() {
+    if (isSolidBg) return;
+    const scrolled = window.scrollY > 60;
+    navbar?.classList.toggle("bg-transparent", !scrolled);
+    navbar?.classList.toggle("bg-primary", scrolled);
+    navbar?.classList.toggle("shadow-lg", scrolled);
+
+    if (logoText) {
+      logoText.classList.toggle("text-white", true);
+    }
+    if (logoSubtitle) {
+      logoSubtitle.classList.toggle("text-white/70", true);
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // ── Toggle menú móvil ──
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = mobileMenu?.classList.contains("hidden") === false;
+    mobileMenu?.classList.toggle("hidden");
+    menuToggle.setAttribute("aria-expanded", String(!isOpen));
+    openIcon?.classList.toggle("hidden", !isOpen);
+    closeIcon?.classList.toggle("hidden", isOpen);
+  });
+
+  // ── Cerrar menú móvil al pulsar un enlace ──
+  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      openIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+    });
+  });
+</script>

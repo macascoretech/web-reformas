@@ -1,0 +1,232 @@
+---
+/**
+ * Banner de cookies compatible con RGPD / LOPDGDD.
+ * Almacena el consentimiento en localStorage bajo la clave 'cookie_consent'.
+ * Valores posibles: 'all' | 'necessary' | null (no respondido)
+ */
+---
+
+<div
+  id="cookie-banner"
+  class="fixed bottom-0 left-0 right-0 z-40 hidden"
+  role="alertdialog"
+  aria-modal="true"
+  aria-label="Aviso de cookies"
+  aria-describedby="cookie-description"
+>
+  <div
+    class="bg-primary/95 backdrop-blur-md border-t border-white/10 shadow-2xl"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+        <!-- Icono + texto -->
+        <div class="flex items-start gap-4 flex-1">
+          <div
+            class="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-accent"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-white font-semibold text-sm mb-1">
+              Uso de cookies
+            </h2>
+            <p
+              id="cookie-description"
+              class="text-white/60 text-xs leading-relaxed max-w-2xl"
+            >
+              Utilizamos cookies propias y de terceros para mejorar la
+              experiencia de navegación y analizar el uso del sitio. Puedes
+              aceptar todas las cookies, solo las necesarias o consultar más
+              información.
+              <a
+                href="/politica-cookies"
+                class="text-accent hover:underline ml-1 whitespace-nowrap"
+                >Política de cookies</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="flex flex-wrap gap-3 flex-shrink-0">
+          <button
+            id="cookie-necessary"
+            type="button"
+            class="text-xs font-medium px-4 py-2.5 rounded-lg border border-white/20 text-white/80 hover:bg-white/10 transition-colors whitespace-nowrap"
+          >
+            Solo necesarias
+          </button>
+          <button
+            id="cookie-settings"
+            type="button"
+            class="text-xs font-medium px-4 py-2.5 rounded-lg border border-white/20 text-white/80 hover:bg-white/10 transition-colors whitespace-nowrap"
+            onclick="document.getElementById('cookie-settings-panel')?.classList.toggle('hidden')"
+          >
+            Configurar
+          </button>
+          <button
+            id="cookie-accept-all"
+            type="button"
+            class="text-xs font-semibold px-5 py-2.5 rounded-lg bg-accent hover:bg-amber-600 text-white transition-colors whitespace-nowrap"
+          >
+            Aceptar todas
+          </button>
+        </div>
+      </div>
+
+      <!-- Panel de configuración expandible -->
+      <div
+        id="cookie-settings-panel"
+        class="hidden mt-4 pt-4 border-t border-white/10"
+      >
+        <div class="grid sm:grid-cols-3 gap-4 text-xs text-white/70">
+          <!-- Necesarias -->
+          <div class="flex items-start gap-3">
+            <div class="relative flex-shrink-0 mt-0.5">
+              <input
+                type="checkbox"
+                id="cookie-type-necessary"
+                checked
+                disabled
+                class="sr-only"
+              />
+              <div class="w-9 h-5 bg-accent rounded-full"></div>
+              <div
+                class="absolute top-0.5 left-5 w-4 h-4 bg-white rounded-full shadow"
+              >
+              </div>
+            </div>
+            <div>
+              <p class="text-white font-medium">Necesarias</p>
+              <p>
+                Imprescindibles para el funcionamiento básico del sitio. No
+                pueden desactivarse.
+              </p>
+            </div>
+          </div>
+          <!-- Analíticas -->
+          <div class="flex items-start gap-3">
+            <label
+              class="flex items-center cursor-pointer flex-shrink-0 mt-0.5"
+              for="cookie-toggle-analytics"
+            >
+              <div class="relative">
+                <input
+                  type="checkbox"
+                  id="cookie-toggle-analytics"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-9 h-5 bg-white/20 peer-checked:bg-accent rounded-full transition-colors"
+                >
+                </div>
+                <div
+                  class="absolute top-0.5 left-0.5 peer-checked:translate-x-4 w-4 h-4 bg-white rounded-full shadow transition-transform"
+                >
+                </div>
+              </div>
+            </label>
+            <div>
+              <p class="text-white font-medium">Analíticas</p>
+              <p>
+                Nos ayudan a entender cómo interactúan los visitantes con el
+                sitio web.
+              </p>
+            </div>
+          </div>
+          <!-- Marketing -->
+          <div class="flex items-start gap-3">
+            <label
+              class="flex items-center cursor-pointer flex-shrink-0 mt-0.5"
+              for="cookie-toggle-marketing"
+            >
+              <div class="relative">
+                <input
+                  type="checkbox"
+                  id="cookie-toggle-marketing"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-9 h-5 bg-white/20 peer-checked:bg-accent rounded-full transition-colors"
+                >
+                </div>
+                <div
+                  class="absolute top-0.5 left-0.5 peer-checked:translate-x-4 w-4 h-4 bg-white rounded-full shadow transition-transform"
+                >
+                </div>
+              </div>
+            </label>
+            <div>
+              <p class="text-white font-medium">Marketing</p>
+              <p>
+                Se utilizan para rastrear a los visitantes y mostrar anuncios
+                relevantes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          id="cookie-save-settings"
+          type="button"
+          class="mt-4 text-xs font-semibold px-5 py-2.5 rounded-lg bg-accent hover:bg-amber-600 text-white transition-colors"
+        >
+          Guardar preferencias
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = "cookie_consent";
+  const banner = document.getElementById("cookie-banner");
+
+  function hideBanner() {
+    banner?.classList.add("hidden");
+  }
+
+  function setConsent(value: string) {
+    localStorage.setItem(STORAGE_KEY, value);
+    hideBanner();
+  }
+
+  // ── Mostrar banner si no hay consentimiento ──
+  if (!localStorage.getItem(STORAGE_KEY)) {
+    // Pequeño delay para no bloquear el LCP
+    setTimeout(() => banner?.classList.remove("hidden"), 1200);
+  }
+
+  document
+    .getElementById("cookie-accept-all")
+    ?.addEventListener("click", () => setConsent("all"));
+  document
+    .getElementById("cookie-necessary")
+    ?.addEventListener("click", () => setConsent("necessary"));
+  document
+    .getElementById("cookie-save-settings")
+    ?.addEventListener("click", () => {
+      const analytics =
+        (document.getElementById("cookie-toggle-analytics") as HTMLInputElement)
+          ?.checked ?? false;
+      const marketing =
+        (document.getElementById("cookie-toggle-marketing") as HTMLInputElement)
+          ?.checked ?? false;
+      const value =
+        analytics && marketing ? "all" : analytics ? "analytics" : "necessary";
+      setConsent(value);
+    });
+</script>

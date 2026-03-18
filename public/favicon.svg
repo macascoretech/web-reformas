@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Fondo redondeado -->
+  <rect width="32" height="32" rx="8" fill="#1F3E5A"/>
+  <!-- Tejado / flecha casa -->
+  <path d="M16 6 L28 16 H24 V26 H8 V16 H4 Z" fill="#D98B2B"/>
+  <!-- Puerta -->
+  <rect x="13" y="19" width="6" height="7" rx="1" fill="#1F3E5A"/>
+</svg>

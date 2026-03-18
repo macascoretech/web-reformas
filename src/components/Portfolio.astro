@@ -1,0 +1,349 @@
+---
+/**
+ * ── CÓMO AÑADIR NUEVOS PROYECTOS ──────────────────────────────────────
+ *
+ * 1. Añade la imagen del proyecto en: /public/images/portfolio/
+ *    (formato recomendado: .webp o .jpg, tamaño 800×600 px aprox.)
+ *
+ * 2. Copia y pega un nuevo objeto al array `projects` de esta misma
+ *    sección de frontmatter, con los siguientes campos:
+ *
+ *    {
+ *      id:          número correlativo único
+ *      image:       ruta a la imagen, ej. '/images/portfolio/mi-proyecto.jpg'
+ *      alt:         texto alternativo accesible, describe la imagen
+ *      category:    etiqueta mostrada en la tarjeta, ej. 'Reforma integral'
+ *      title:       nombre del proyecto, ej. 'Reforma de vivienda en Murcia'
+ *      description: breve descripción del trabajo realizado (2-3 líneas)
+ *      location:    localidad donde se realizó, ej. 'Molina de Segura'
+ *    }
+ *
+ * 3. Guarda el archivo. El carrusel se actualizará automáticamente.
+ * ─────────────────────────────────────────────────────────────────────
+ */
+
+/*
+const projects = [
+  {
+    id: 1,
+    image: '/images/portfolio/proyecto-1.jpg',
+    alt: 'Reforma integral de salón con cocina abierta en Molina de Segura',
+    category: 'Reforma integral',
+    title: 'Reforma integral de vivienda',
+    description:
+      'Transformación completa de una vivienda de 90 m²: nuevo suelo, distribución, cocina abierta y baño renovado con acabados de alta calidad.',
+    location: 'Molina de Segura',
+  },
+  {
+    id: 2,
+    image: '/images/portfolio/proyecto-2.jpg',
+    alt: 'Piscina rectangular con gresite azul construida en jardín de villa en Murcia',
+    category: 'Piscina',
+    title: 'Construcción de piscina a medida',
+    description:
+      'Diseño y construcción de piscina de 8×4 m con gresite azul, iluminación LED subacuática, sistema de depuración y escalera integrada.',
+    location: 'Murcia',
+  },
+  {
+    id: 3,
+    image: '/images/portfolio/proyecto-3.jpg',
+    alt: 'Baño reformado con ducha de obra y azulejos modernos en Alcantarilla',
+    category: 'Reforma de baño',
+    title: 'Baño moderno con ducha de obra',
+    description:
+      'Renovación completa de baño con ducha de obra de microcemento, doble lavabo sobre encimera flotante y calefacción por toallero eléctrico.',
+    location: 'Alcantarilla',
+  },
+  {
+    id: 4,
+    image: '/images/portfolio/proyecto-4.jpg',
+    alt: 'Cocina moderna reformada con isla central y encimera de silestone en Murcia',
+    category: 'Reforma de cocina',
+    title: 'Cocina con isla y encimera de silestone',
+    description:
+      'Diseño funcional con isla central, frentes lacados en blanco, encimera de Silestone y menaje de electrodomésticos Bosch integrados.',
+    location: 'Murcia capital',
+  },
+  {
+    id: 5,
+    image: '/images/portfolio/proyecto-5.jpg',
+    alt: 'Barbacoa de obra en terraza exterior con zona de asado y chimenea',
+    category: 'Barbacoa de obra',
+    title: 'Barbacoa de obra con chimenea',
+    description:
+      'Construcción de barbacoa de obra revestida de piedra natural, con zona de asado, encimera de granito y chimenea de tiro directo.',
+    location: 'Santomera',
+  },
+  {
+    id: 6,
+    image: '/images/portfolio/proyecto-6.jpg',
+    alt: 'Obra menor de ampliación de terraza con solado de porcelana exterior',
+    category: 'Obra menor',
+    title: 'Ampliación y solado de terraza',
+    description:
+      'Ampliación de terraza de 25 m² con solado de porcelana de gran formato, zócalo perimetral y impermeabilización bajo solado.',
+    location: 'Molina de Segura',
+  },
+];
+*/
+---
+
+<section
+  id="proyectos"
+  class="py-24 bg-white overflow-hidden"
+  aria-labelledby="portfolio-title"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Cabecera -->
+    <div class="text-center mb-16 reveal">
+      <span
+        class="inline-block bg-accent/10 text-accent text-sm font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+      >
+        Nuestros proyectos
+      </span>
+      <h2
+        id="portfolio-title"
+        class="text-3xl sm:text-4xl lg:text-5xl font-black text-primary mb-5"
+      >
+        Trabajos que hablan<br class="hidden sm:block" />
+        <span class="text-accent">por sí solos</span>
+      </h2>
+      <p class="text-secondary text-lg max-w-2xl mx-auto leading-relaxed">
+        Cada proyecto es único y lo tratamos como tal. Aquí tienes una muestra
+        de los trabajos que hemos realizado con orgullo en Murcia y alrededores.
+      </p>
+    </div>
+
+    <!-- Próximamente -->
+    <div class="flex flex-col items-center justify-center py-20 px-6 reveal">
+      <div
+        class="bg-light border border-gray-200 rounded-2xl shadow-sm max-w-xl w-full text-center px-10 py-14"
+      >
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8 text-accent"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+            ></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-black text-primary mb-3">Próximamente</h3>
+        <p class="text-secondary text-base leading-relaxed">
+          Estamos recopilando nuestros mejores trabajos para mostrártelos aquí.
+          <br class="hidden sm:block" />
+          ¡Vuelve pronto para descubrir nuestros proyectos!
+        </p>
+      </div>
+    </div>
+
+    <!-- CARRUSEL (descomentar cuando haya proyectos) -->
+    <!--
+    <div class="relative reveal" aria-label="Carrusel de proyectos realizados" role="region">
+      <div id="carousel-viewport" class="overflow-hidden rounded-2xl">
+        <ul
+          id="carousel-track"
+          class="carousel-track flex gap-6"
+          role="list"
+          aria-label="Proyectos"
+        >
+          {
+            projects.map((project) => (
+              <li
+                class="carousel-slide flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                role="listitem"
+              >
+                <article class="bg-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
+                  <div class="relative aspect-[4/3] overflow-hidden flex-shrink-0">
+                    <img
+                      src={project.image}
+                      alt={project.alt}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      width="640"
+                      height="480"
+                      loading="lazy"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
+                    <span class="absolute top-4 left-4 bg-accent text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+                      {project.category}
+                    </span>
+                  </div>
+                  <div class="p-6 flex flex-col flex-1">
+                    <h3 class="font-bold text-primary text-lg mb-2">{project.title}</h3>
+                    <p class="text-secondary text-sm leading-relaxed flex-1">{project.description}</p>
+                    <div class="flex items-center gap-1.5 mt-4 text-xs text-gray-DEFAULT">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 text-accent flex-shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                      {project.location}
+                    </div>
+                  </div>
+                </article>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="flex items-center justify-center gap-4 mt-8">
+        <button
+          id="carousel-prev"
+          type="button"
+          class="w-12 h-12 rounded-full bg-light hover:bg-primary hover:text-white border border-gray-200 text-primary flex items-center justify-center transition-all duration-200 focus-visible:ring-2 focus-visible:ring-accent disabled:opacity-40 disabled:cursor-not-allowed"
+          aria-label="Proyecto anterior"
+          disabled
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <div id="carousel-dots" class="flex gap-2" role="tablist" aria-label="Navegación del carrusel">
+        </div>
+
+        <button
+          id="carousel-next"
+          type="button"
+          class="w-12 h-12 rounded-full bg-light hover:bg-primary hover:text-white border border-gray-200 text-primary flex items-center justify-center transition-all duration-200 focus-visible:ring-2 focus-visible:ring-accent"
+          aria-label="Proyecto siguiente"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    -->
+  </div>
+</section>
+
+<!-- <script> (descomentar junto con el carrusel)
+<script>
+  const track = document.getElementById('carousel-track') as HTMLElement;
+  const viewport = document.getElementById('carousel-viewport') as HTMLElement;
+  const prevBtn = document.getElementById('carousel-prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('carousel-next') as HTMLButtonElement;
+  const dotsContainer = document.getElementById('carousel-dots') as HTMLElement;
+
+  let current = 0;
+  let slidesPerView = 3;
+  const totalSlides = track?.querySelectorAll('.carousel-slide').length ?? 0;
+
+  function getSlidesPerView(): number {
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  }
+
+  function getMaxIndex(): number {
+    return Math.max(0, totalSlides - slidesPerView);
+  }
+
+  function getSlideWidth(): number {
+    const slide = track?.querySelector('.carousel-slide') as HTMLElement;
+    if (!slide) return 0;
+    const gap = 24;
+    return slide.offsetWidth + gap;
+  }
+
+  function updateCarousel() {
+    slidesPerView = getSlidesPerView();
+    const max = getMaxIndex();
+    if (current > max) current = max;
+
+    track.style.transform = `translateX(-${current * getSlideWidth()}px)`;
+    prevBtn.disabled = current <= 0;
+    nextBtn.disabled = current >= max;
+
+    dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+      const active = i === current;
+      dot.setAttribute('aria-selected', String(active));
+      dot.classList.toggle('bg-accent', active);
+      dot.classList.toggle('w-6', active);
+      dot.classList.toggle('bg-gray-300', !active);
+      dot.classList.toggle('w-2', !active);
+    });
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    slidesPerView = getSlidesPerView();
+    const max = getMaxIndex();
+    for (let i = 0; i <= max; i++) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-label', `Ir al proyecto ${i + 1}`);
+      btn.className =
+        'h-2 rounded-full transition-all duration-300 focus-visible:ring-2 focus-visible:ring-accent';
+      btn.addEventListener('click', () => { current = i; updateCarousel(); });
+      dotsContainer.appendChild(btn);
+    }
+    updateCarousel();
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    if (current > 0) { current--; updateCarousel(); }
+  });
+  nextBtn?.addEventListener('click', () => {
+    if (current < getMaxIndex()) { current++; updateCarousel(); }
+  });
+
+  let startX = 0;
+  viewport?.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  viewport?.addEventListener('touchend', (e) => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0 && current < getMaxIndex()) { current++; updateCarousel(); }
+      else if (diff < 0 && current > 0) { current--; updateCarousel(); }
+    }
+  });
+
+  window.addEventListener('resize', () => { buildDots(); }, { passive: true });
+
+  buildDots();
+</script>
+-->
