@@ -9,7 +9,11 @@ export default defineConfig({
         tailwind(),
     ],
     output: 'server',
-    adapter: vercel(),
+    adapter: vercel({
+        webAnalytics: {
+            enabled: true
+        }
+    }),
 
     server: {
         host: true
